@@ -13,11 +13,42 @@ header {
     text-align: center;
 }
 
+/* Global Button Styles */
 button {
+    background: #20232a;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
     margin: 0.5rem;
-    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
     font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
+
+button:hover {
+    background: #444;
+}
+
+/* Specific Button Styles */
+.btn-like {
+    background: #28a745;
+    color: white;
+}
+
+.btn-like:hover {
+    background: #218838;
+}
+
+.btn-details {
+    background: #007bff;
+    color: white;
+}
+
+.btn-details:hover {
+    background: #0056b3;
+}
+
 
 .dark-theme {
     background: #1e1e1e;
