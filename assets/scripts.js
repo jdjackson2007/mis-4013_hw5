@@ -1,11 +1,22 @@
 // 1. Like a Comic
 function likeComic(title) {
-    alert(`You’ve liked "${title}"!`);
+    Swal.fire({
+        icon: 'success',
+        title: 'Liked!',
+        text: `You liked "${title}"!`,
+        timer: 1500,
+        showConfirmButton: false
+    });
 }
+
 
 // 2. View Comic Details
 function viewDetails(title, description) {
-    alert(`${title}: ${description}`);
+    Swal.fire({
+        title: title,
+        text: description,
+        icon: 'info'
+    });
 }
 
 // 3. Validate Form
