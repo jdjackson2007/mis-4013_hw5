@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -19,11 +20,13 @@ button {
     font-size: 1rem;
 }
 
+/* Dark Theme */
 .dark-theme {
     background: #1e1e1e;
     color: white;
 }
 
+/* Comic Gallery Styles */
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -45,25 +48,3 @@ button {
     max-width: 100%;
     border-radius: 10px;
 }
-const ctx = document.getElementById('comicStats').getContext('2d');
-const comicChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Batman', 'Superman', 'Wonder Woman', 'Animal Man', 'The Question', 'Ambush Bug', 'Swamp Thing'],
-        datasets: [{
-            label: '# of Likes',
-            data: [12, 19, 3, 5, 2, 3, 7], // Example data
-            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-            borderColor: 'rgba(54, 162, 235, 1)',
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-
