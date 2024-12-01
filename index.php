@@ -36,32 +36,35 @@ include 'comics-data.php';
         <button onclick="toggleGallery()">Show/Hide Gallery</button>
     </header>
     <main>
-        <section id="comic-gallery">
-            <h2>Explore the Multiverse</h2>
-            <div class="gallery">
-                <?php foreach ($comics as $comic): ?>
-                    <div class="comic-card">
+    <section id="comic-gallery">
+        <h2>Explore the Multiverse</h2>
+        <div class="gallery">
+            <?php foreach ($comics as $comic): ?>
+                <div class="comic-card">
+                    <a href="<?php echo $comic['cover']; ?>" class="lightbox">
                         <img src="<?php echo $comic['cover']; ?>" alt="<?php echo $comic['title']; ?>">
-                        <h3><?php echo $comic['title']; ?></h3>
-                        <button onclick="likeComic('<?php echo $comic['title']; ?>')">Like</button>
-                        <button onclick="viewDetails('<?php echo $comic['title']; ?>', '<?php echo $comic['description']; ?>')">Details</button>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </section>
-        <section id="comic-form">
-            <h2>Add Your Favorite DC Comic</h2>
-            <form id="comicForm" action="submit.php" method="POST" onsubmit="return validateForm();">
-                <label for="comicTitle">Comic Title:</label>
-                <input type="text" id="comicTitle" name="title" required>
-                <label for="comicCover">Comic Cover URL:</label>
-                <input type="url" id="comicCover" name="cover" required>
-                <label for="comicDescription">Description:</label>
-                <textarea id="comicDescription" name="description" required></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </main>
+                    </a>
+                    <h3><?php echo $comic['title']; ?></h3>
+                    <button title="Click to like this comic!" onclick="likeComic('<?php echo $comic['title']; ?>')">Like</button>
+                    <button title="View more details about this comic" onclick="viewDetails('<?php echo $comic['title']; ?>', '<?php echo $comic['description']; ?>')">Details</button>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <section id="comic-form">
+        <h2>Add Your Favorite DC Comic</h2>
+        <form id="comicForm" action="submit.php" method="POST" onsubmit="return validateForm();">
+            <label for="comicTitle">Comic Title:</label>
+            <input type="text" id="comicTitle" name="title" required>
+            <label for="comicCover">Comic Cover URL:</label>
+            <input type="url" id="comicCover" name="cover" required>
+            <label for="comicDescription">Description:</label>
+            <textarea id="comicDescription" name="description" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</main>
+
     <footer>
         <p>&copy; <?php echo date('Y'); ?> DC Comics Fans Unite!</p>
     </footer>
