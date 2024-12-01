@@ -32,3 +32,12 @@ function changeTheme() {
     document.body.classList.toggle('dark-theme');
     alert('Dark Mode toggled!');
 }
+
+anime({
+    targets: 'h1',
+    translateY: [-50, 0],
+    opacity: [0, 1],
+    easing: 'easeOutExpo',
+    duration: 1500
+});
+
