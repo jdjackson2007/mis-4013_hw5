@@ -56,3 +56,6 @@ include 'comics-data.php';
     </footer>
 </body>
 </html>
+
+</body>
+</html>
